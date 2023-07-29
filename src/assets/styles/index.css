@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.theme {
+  gap: 35px;
+}
+
 .heading {
   grid-column: 1 / span 5;
   border-bottom: 1px solid black;
@@ -25,4 +29,18 @@ h1 {
 
 h2 {
   font-size: 16px;
+}
+
+body:not([theme='Light']) {
+  background: var(--dark-surface-background);
+  color: var(--light-surface-background);
+}
+
+body:not([theme='Dark']) {
+  background: var(--light-surface-background);
+  color: var(--dark-surface-background);
+}
+
+uds-button > span {
+  text-wrap: nowrap;
 }

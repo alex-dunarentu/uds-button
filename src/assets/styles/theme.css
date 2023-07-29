@@ -22,15 +22,37 @@
 :root {
   --custom-font: 'Helios Antique', sans-serif;
 
+  --light-surface-background: #ffffff;
+  --dark-surface-background: #131416;
+
   --light-surface-accent: #fee600;
+  --dark-surface-accent: #fee600;
+  --light-solid-info: #008FA8;
+  --dark-solid-info: #65C9D7;
   --light-surface-elevation: rgba(101, 103, 114, 0.08);
-  
+  --dark-surface-elevation: rgba(143, 145, 153, 0.2);
+
+  --light-tint-info: #FFFFFF;/*  */
+  --light-tint-on-info: #00758F;/*  */
   --light-tint-accent: #232529;
-  --light-tint-action: #00758F;
-  --light-surface-translucent: #ffffff;
+  --dark-tint-accent: #232529;
+  --light-tint-action: #00758f;
+  --dark-tint-action: #00758f;
+  --light-surface-info: #DFF2F6;/*  */
+  --dark-surface-info: #00465C;
+  --light-surface-translucent: rgba(255, 255, 255, 0);
+  --dark-surface-translucent: rgba(255, 255, 255, 0);
 
   --light-border-accent: rgba(19, 20, 22, 0.08);
+  --dark-border-accent: rgba(255, 255, 255, 0.2);
+  --light-utility-state-button-focus: 0px 0px 0px 2px #ffffff,
+    0px 0px 0px 5px rgba(0, 143, 168, 0.4);
+  --dark-utility-state-button-focus: 0px 0px 0px 2px #131416,
+    0px 0px 0px 5px rgba(101, 201, 215, 0.4);
   --light-utility-state-button-hover: rgba(19, 20, 22, 0.12);
+  --dark-utility-state-button-hover: rgba(19, 20, 22, 0.12);
   --light-utility-state-button-pressed: rgba(19, 20, 22, 0.25);
-  --light-utility-state-button-disabled: rgba(143, 145, 153, 0.20);
+  --dark-utility-state-button-pressed: rgba(19, 20, 22, 0.25);
+  --light-utility-state-button-disabled: rgba(143, 145, 153, 0.2);
+  --dark-utility-state-button-disabled: rgba(143, 145, 153, 0.2);
 }

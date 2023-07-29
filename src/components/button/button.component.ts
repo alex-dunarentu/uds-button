@@ -65,9 +65,13 @@ export class UDSButton extends LitElement {
   @property() theme: 'Light' | 'Dark' = 'Light';
 
   /**
+   * Click handler used in handle clicking.
+   */
+  @property({ type: Function }) clickHandler = () => {};
+  /**
    * The URL that the link button points to.
    */
-  @property({ type: Boolean/* , attribute: false */ }) loading = false;
+  @property({ type: Boolean /* , attribute: false */ }) loading = false;
 
   /**
    * Specifies the type of button, used for controlling forms. When type
@@ -112,8 +116,9 @@ export class UDSButton extends LitElement {
   }
 
   private handleClick(event: MouseEvent) {
-    event.stopPropagation();
-    /* this.loading = !this.loading; */
+    event.preventDefault();
+    this.clickHandler();
+    console.log(this.clickHandler);
     return;
   }
 }
