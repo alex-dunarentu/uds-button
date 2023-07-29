@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Helios_Antique_Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Helios_Antique_Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Helios_Antique_Semi_Bold.woff') format('woff');
+}
+
+:root {
+  --custom-font: 'Helios Antique', sans-serif;
+
+  --light-surface-accent: #fee600;
+  --light-surface-elevation: rgba(101, 103, 114, 0.08);
+  
+  --light-tint-accent: #232529;
+  --light-tint-action: #00758F;
+  --light-surface-translucent: #ffffff;
+
+  --light-border-accent: rgba(19, 20, 22, 0.08);
+  --light-utility-state-button-hover: rgba(19, 20, 22, 0.12);
+  --light-utility-state-button-pressed: rgba(19, 20, 22, 0.25);
+  --light-utility-state-button-disabled: rgba(143, 145, 153, 0.20);
+}
