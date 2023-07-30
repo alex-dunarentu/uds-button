@@ -70,7 +70,7 @@ const accentStyles = css`
 
   .Button.Dark.Secondary-Outlined.Accent {
     background: var(--dark-surface-translucent);
-    color: var(--dark-tint-accent_outlined);
+    color: var(--dark-tint-accent);
     box-shadow: var(--dark-box-shadow-accent);
   }
 
@@ -120,7 +120,8 @@ const infoStyles = css`
   }
 
   .Button.Light.Secondary-Outlined.Info:focus {
-    box-shadow: var(--light-utility-state-button-focus);
+    box-shadow: var(--light-box-shadow-accent),
+      var(--light-utility-state-button-focus);
   }
 
   .Button.Dark.Primary.Info {
@@ -141,11 +142,130 @@ const infoStyles = css`
     box-shadow: var(--dark-box-shadow-accent);
   }
 
-  #Button.Info:hover::before,
-  #Button.Info:active::before {
-    background: none;
+  #Button.Primary.Info:hover::before {
+    opacity: 0.12;
+    background: var(--light-tint-on-solid);
   }
-  
+  #Button.Primary.Info:active::before {
+    opacity: 0.25;
+    background: var(--light-tint-on-solid);
+  }
+  #Button.Secondary.Info:hover::before {
+    opacity: 0.12;
+    background: var(--light-tint-on-info, #00758f);
+  }
+  #Button.Secondary.Info:active::before {
+    opacity: 0.25;
+    background: var(--light-tint-on-info, #00758f);
+  }
+`;
+
+const dangerStyles = css`
+  .Button.Light.Primary.Danger {
+    background: var(--light-solid-danger);
+    color: var(--light-tint-on-solid);
+    box-shadow: var(--light-box-shadow-accent);
+  }
+
+  .Button.Light.Primary.Danger:focus {
+    box-shadow: var(--light-box-shadow-accent),
+      var(--light-utility-state-button-focus);
+  }
+
+  .Button.Dark.Primary.Danger {
+    background: var(--dark-solid-danger);
+    color: var(--light-tint-on-solid);
+    box-shadow: var(--dark-box-shadow-accent);
+  }
+
+  .Button.Dark.Primary.Danger:focus {
+    box-shadow: var(--dark-box-shadow-accent),
+      var(--dark-utility-state-button-focus);
+  }
+
+  #Button.Primary.Danger:hover::before {
+    opacity: 0.12;
+    background: var(--light-solid-danger);
+  }
+
+  #Button.Primary.Danger:active::before {
+    opacity: 0.25;
+    background: var(--light-solid-danger);
+  }
+  /*  */
+  .Button.Light.Secondary.Danger {
+    background: var(--light-surface-danger);
+    color: var(--light-tint-on-danger);
+    box-shadow: var(--light-box-shadow-accent);
+  }
+
+  .Button.Light.Secondary.Danger:focus {
+    box-shadow: var(--light-box-shadow-accent),
+      var(--light-utility-state-button-focus);
+  }
+
+  .Button.Dark.Secondary.Danger {
+    background: var(--dark-surface-danger);
+    color: var(--light-tint-on-danger);
+    box-shadow: var(--dark-box-shadow-accent);
+  }
+
+  .Button.Dark.Secondary.Danger:focus {
+    box-shadow: var(--dark-box-shadow-accent),
+      var(--dark-utility-state-button-focus);
+  }
+
+  #Button.Secondary.Danger:hover::before {
+    opacity: 0.12;
+    background: var(--light-solid-danger);
+  }
+
+  #Button.Secondary.Danger:active::before {
+    opacity: 0.25;
+    background: var(--light-solid-danger);
+  }
+
+  .Button.Light.Secondary-Outlined.Danger {
+    background: var(--light-surface-translucent);
+    color: var(--light-solid-danger);
+    box-shadow: var(--light-box-shadow-accent);
+  }
+
+  .Button.Dark.Secondary-Outlined.Danger {
+    background: var(--dark-surface-translucent);
+    color: var(--light-solid-danger);
+    box-shadow: var(--dark-box-shadow-accent);
+  }
+
+  .Button.Light.Secondary-Outlined.Danger:focus {
+    box-shadow: var(--light-box-shadow-accent),
+      var(--light-utility-state-button-focus);
+  }
+
+  .Button.Dark.Secondary-Outlined.Danger:focus {
+    box-shadow: var(--dark-box-shadow-accent),
+      var(--dark-utility-state-button-focus);
+  }
+
+  .Button.Light.Tertiary.Danger {
+    background: var(--light-surface-translucent);
+    color: var(--light-solid-danger);
+    box-shadow: var(--light-box-shadow-tertiary);
+  }
+
+  .Button.Dark.Tertiary.Danger {
+    background: var(--dark-surface-translucent);
+    color: var(--light-solid-danger);
+    box-shadow: var(--light-box-shadow-tertiary);
+  }
+
+  .Button.Light.Tertiary.Danger:focus {
+    box-shadow: var(--light-utility-state-button-focus);
+  }
+
+  Button.Dark.Tertiary.Danger:focus {
+    box-shadow: var(--dark-utility-state-button-focus);
+  }
 `;
 
 export const styles = css`
@@ -177,12 +297,14 @@ export const styles = css`
     user-select: none;
     overflow: hidden;
     font-family: var(--custom-font);
-    letter-spacing: -1px;
+    text-decoration: none;
+    letter-spacing: -1px; /* corrects a bit the wrong font */
     font-weight: 600;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 8px;
   }
 
   .Button.Large {
@@ -229,10 +351,16 @@ export const styles = css`
     pointer-events: none;
   }
 
-  #Button.Secondary-Outlined:not(.Loading):disabled {
+  #Button.Light.Secondary-Outlined:not(.Loading):disabled {
     opacity: 0.25;
     background: var(--light-surface-translucent);
     box-shadow: var(--light-box-shadow-accent);
+  }
+
+  #Button.Dark.Secondary-Outlined:not(.Loading):disabled {
+    opacity: 0.25;
+    background: var(--dark-surface-translucent);
+    box-shadow: var(--dark-box-shadow-accent);
   }
 
   #Button.Tertiary:not(.Loading):disabled {
@@ -270,6 +398,7 @@ export const styles = css`
 
   ${accentStyles}
   ${infoStyles}
+  ${dangerStyles}
 `;
 
 export const normalizeStyles = css`

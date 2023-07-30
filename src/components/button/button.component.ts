@@ -1,11 +1,7 @@
 import { LitElement, html, nothing } from 'lit';
 import { html as staticHtml, literal } from 'lit/static-html.js';
 import { when } from 'lit/directives/when.js';
-import {
-  customElement,
-  property,
-  queryAssignedElements,
-} from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import { styles, normalizeStyles } from './button.styles';
 import { ButtonSize, ButtonVariant, ButtonIntent } from './button.types';
@@ -47,29 +43,17 @@ export class UDSButton extends LitElement {
   @property() target?: string;
 
   /**
-   * Whether to render the icon at the inline end of the label rather than the
-   * inline start.
-   *
-   * _Note:_ Link buttons cannot have trailing icons.
-   */
-  @property({ type: Boolean, attribute: 'trailing-icon' }) trailingIcon = false;
-
-  /**
-   * Whether to display the icon or not.
-   */
-  @property({ type: Boolean, attribute: 'has-icon' }) hasIcon = false;
-
-  /**
-   * Theme used in selecting appropiate styles.
+   * Whether to display the button for 'Light' or 'Dark' theme.
    */
   @property() theme: 'Light' | 'Dark' = 'Light';
 
   /**
-   * Click handler used in handle clicking.
+   * Click handler used in handle click event.
    */
   @property({ type: Function }) clickHandler = () => {};
+
   /**
-   * The URL that the link button points to.
+   * Whether to show the loading state of the button.
    */
   @property({ type: Boolean /* , attribute: false */ }) loading = false;
 
@@ -80,27 +64,18 @@ export class UDSButton extends LitElement {
    */
   @property() type: '' | 'submit' | 'reset' = '';
 
-  @queryAssignedElements({ slot: 'icon', flatten: true })
-  private readonly assignedIcons!: HTMLElement[];
-
   override render() {
     // Link buttons may not be disabled
     const isDisabled = (this.disabled || this.loading) && !this.href;
     const isLoading = this.loading ? 'Loading' : '';
     const button = this.href ? literal`a` : literal`button`;
 
-    console.log('Assigned Icons', this.assignedIcons);
     return staticHtml`
       <${button}
         id="Button"
-        class="Button ${[
-          this.theme,
-          this.variant,
-          this.intent,
-          this.size,
-          isLoading,
-        ].join(' ')}"
+        class="Button ${[this.theme, this.variant, this.intent, this.size, isLoading].join(' ')}"
         ?disabled=${isDisabled}
+        type=${this.type || nothing}
         href=${this.href || nothing}
         target=${this.target || nothing}
         @click="${this.handleClick}"
@@ -110,16 +85,44 @@ export class UDSButton extends LitElement {
         () => html`<img class="LoadingIcon" src=${Loading} alt="Loading" />`,
         () => html``
       )}
+        <slot name="leftIcon"></slot>
         <slot name="label"></slot>
+        <slot name="rightIcon"></slot>
       </${button}>
     `;
   }
 
-  private handleClick(event: MouseEvent) {
-    event.preventDefault();
-    this.clickHandler();
-    console.log(this.clickHandler);
-    return;
+  override updated() {
+    this.checkSlots();
+  }
+
+  private checkSlots() {
+    const leftIconSlot = this.shadowRoot!.querySelector('slot[name="leftIcon"]') as HTMLSlotElement;
+    const rightIconSlot = this.shadowRoot!.querySelector('slot[name="rightIcon"]') as HTMLSlotElement;
+
+    const leftIconCount = leftIconSlot.assignedNodes({ flatten: true }).filter((node) => node.nodeType === Node.ELEMENT_NODE).length;
+    const rightIconCount = rightIconSlot.assignedNodes({ flatten: true }).filter((node) => node.nodeType === Node.ELEMENT_NODE).length;
+
+    if (leftIconCount > 0 && rightIconCount > 0) {
+      leftIconSlot.style.display = 'none';
+      rightIconSlot.style.display = 'none';
+      throw new Error('Only one icon can be used in either leftIcon or rightIcon slot of the button');
+    }
+  }
+
+  private handleClick() {
+    if (!this.type) {
+      this.clickHandler();
+    } else {
+      const form = this.closest('form') as HTMLFormElement | null;
+      if (form) {
+        if (this.type === 'submit') {
+          form.requestSubmit();
+        } else if (this.type === 'reset') {
+          form.reset();
+        }
+      }
+    }
   }
 }
 

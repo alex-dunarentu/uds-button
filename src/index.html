@@ -14,24 +14,19 @@
       <h1>Theme</h1>
     </div>
     <div class="centered theme">
-      <uds-button
-        theme="Light"
-        variant="Secondary-Outlined"
-        intent="Accent"
-        size="Large"
-      >
+      <uds-button theme="Light" variant="Primary" intent="Danger" size="Large">
         <span slot="label">Light</span>
       </uds-button>
-      <uds-button
-        theme="Light"
-        variant="Secondary-Outlined"
-        intent="Accent"
-        size="Large"
-      >
+      <uds-button theme="Light" variant="Primary" intent="Info" size="Large">
         <span slot="label">Dark</span>
       </uds-button>
     </div>
-    <!-- Accent -->
+
+    <button class="Button">
+      <div class="Surface Background"></div>
+      <div class="Foreground">Button label</div>
+    </button>
+
     <div class="grid-container">
       <div class="centered heading">
         <h1>Large Accent</h1>
@@ -62,6 +57,7 @@
           variant="Primary"
           intent="Accent"
           size="Large"
+          type="submit"
         >
           <span slot="label">Button label</span>
         </uds-button>
@@ -193,6 +189,7 @@
         </uds-button>
       </div>
     </div>
+    <!-- 
     <div class="grid-container">
       <div class="centered heading">
         <h1>Medium Accent</h1>
@@ -515,7 +512,7 @@
         </uds-button>
       </div>
     </div>
-    <!-- Info -->
+ 
     <div class="grid-container">
       <div class="centered heading">
         <h1>Large Info</h1>
@@ -541,12 +538,7 @@
         <h2>Default</h2>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Primary"
-          intent="Info"
-          size="Large"
-        >
+        <uds-button theme="Light" variant="Primary" intent="Info" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
@@ -570,8 +562,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Disabled</h2>
@@ -609,8 +600,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Loading</h2>
@@ -648,8 +638,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
     </div>
     <div class="grid-container">
       <div class="centered heading">
@@ -676,12 +665,7 @@
         <h2>Default</h2>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Primary"
-          intent="Info"
-          size="Medium"
-        >
+        <uds-button theme="Light" variant="Primary" intent="Info" size="Medium">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
@@ -705,8 +689,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Disabled</h2>
@@ -744,8 +727,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Loading</h2>
@@ -783,8 +765,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
     </div>
     <div class="grid-container">
       <div class="centered heading">
@@ -811,12 +792,7 @@
         <h2>Default</h2>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Primary"
-          intent="Info"
-          size="Small"
-        >
+        <uds-button theme="Light" variant="Primary" intent="Info" size="Small">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
@@ -840,8 +816,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Disabled</h2>
@@ -879,8 +854,7 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
-      <div>
-      </div>
+      <div></div>
 
       <div class="centered">
         <h2>Loading</h2>
@@ -918,9 +892,493 @@
           <span slot="label">Button label</span>
         </uds-button>
       </div>
+      <div></div>
+    </div>
+
+    <div class="grid-container">
+      <div class="centered heading">
+        <h1>Large Danger</h1>
+      </div>
+
       <div>
+        <h2></h2>
+      </div>
+      <div class="centered">
+        <h2>Primary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary Outlined</h2>
+      </div>
+      <div class="centered">
+        <h2>Tertiary</h2>
+      </div>
+
+      <div class="centered">
+        <h2>Default</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Disabled</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Loading</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Large"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
       </div>
     </div>
+    <div class="grid-container">
+      <div class="centered heading">
+        <h1>Medium Danger</h1>
+      </div>
+
+      <div>
+        <h2></h2>
+      </div>
+      <div class="centered">
+        <h2>Primary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary Outlined</h2>
+      </div>
+      <div class="centered">
+        <h2>Tertiary</h2>
+      </div>
+
+      <div class="centered">
+        <h2>Default</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Disabled</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Loading</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Medium"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="centered heading">
+        <h1>Small Danger</h1>
+      </div>
+
+      <div>
+        <h2></h2>
+      </div>
+      <div class="centered">
+        <h2>Primary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary</h2>
+      </div>
+      <div class="centered">
+        <h2>Secondary Outlined</h2>
+      </div>
+      <div class="centered">
+        <h2>Tertiary</h2>
+      </div>
+
+      <div class="centered">
+        <h2>Default</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Disabled</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          disabled
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+
+      <div class="centered">
+        <h2>Loading</h2>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Primary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Secondary-Outlined"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+      <div class="centered">
+        <uds-button
+          loading
+          theme="Light"
+          variant="Tertiary"
+          intent="Danger"
+          size="Small"
+        >
+          <span slot="label">Button label</span>
+        </uds-button>
+      </div>
+    </div>
+    -->
     <script>
       const buttonElements = document.querySelectorAll('uds-button');
 
