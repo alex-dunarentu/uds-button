@@ -159,7 +159,7 @@ Polyfills for Web Components:
 - @webcomponents/webcomponentsjs - Polyfills for custom elements, shadow DOM, template, and some newer DOM APIs
 - lit/polyfill-support.js - A file that ships in the lit package that must be loaded when using webcomponentsjs
 
-Example:
+Example for a React App:
 
 1. Build for production.
 
@@ -175,7 +175,9 @@ npm run build
 <script src="app.bundle.js"></script>
 ```
 
-3. Include a `UDS` theme like in [here](https://github.com/alex-dunarentu/uds-button/blob/main/src/assets/styles/themeMock.css).
+3. Include a `UDS` theme like in [here](https://github.com/alex-dunarentu/uds-button/blob/main/src/assets/styles/themeMock.css) and don't forget the [loading.svg](https://github.com/alex-dunarentu/uds-button/blob/main/src/assets/images/loading.svg) icon.
+
+4. If using TypeScript, beaware of `Property 'uds-button' does not exist on type 'JSX.IntrinsicElements'`. Extends the JSX.IntrinsicElements interface to include the 'uds-button' element, allowing TypeScript to recognize it as a valid JSX element and resolve the error.
 
 ## Optimizations
 
