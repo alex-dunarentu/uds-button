@@ -1,0 +1,108 @@
+/**
+ * Font Face Declaration
+ * 
+ * Note:
+ * The font Amalia specified in the Figma design was not available, but to maintain the design's fidelity,
+ * I selected a similar font to achieve a visually consistent look. At the end of development, the font can
+ * be effortlessly substituted to precisely match the original design.
+ */
+
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Helios_Antique_Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Helios_Antique_Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helios Antique';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Helios_Antique_Semi_Bold.woff') format('woff');
+}
+
+:root {
+  --custom-font: 'Helios Antique', sans-serif;
+
+  /** Button
+   *  
+   *  Note:
+   *  All button paddings are 1 pixel smaller than Figma design.
+   *  This is due to the implementation structure of the button and it is necessary
+   *  in order to have the correct dimensions in the end.
+   *
+   *  While the Figma design specified a certain line-height, I made a careful adjustment
+   *  to the line-height value. This decision was taken to ensure that the button maintains
+   *  its intended proportions and looks identical to the Figma design at the end.
+   */
+  --button-padding-large: 15px;
+  --button-font-size-large: 16px;
+  --button-line-height-large: 16px;
+  --button-border-radius-large: 12px;
+
+  --button-padding-medium: 11px 15px;
+  --button-font-size-medium: 14px;
+  --button-line-height-medium: 16px;
+  --button-border-radius-medium: 8px;
+
+  --button-padding-small: 7px 11px;
+  --button-font-size-small: 14px;
+  --button-line-height-small: 16px;
+  --button-border-radius-small: 8px;
+
+  /* Solid colors */
+  --light-solid-info: #008fa8;
+  --dark-solid-info: #65c9d7;
+
+  --light-solid-danger: #d7424b;
+  --dark-solid-danger: #ed7a81;
+
+  /* Surface colors */
+  --light-surface-background: #ffffff;
+  --dark-surface-background: #131416;
+  --light-surface-accent: #fee600;
+  --dark-surface-accent: #fee600;
+  --light-surface-elevation: #e3e3e7;
+  --dark-surface-elevation: #2c2d31;
+  --light-surface-translucent: #ffffff;
+  --dark-surface-translucent: #131416;
+  --light-surface-info: #DFF2F6;
+  --dark-surface-info: #00465C;
+  --light-surface-danger: #FCE9EA;
+  --dark-surface-danger: #5B292D;
+
+  /* Tint */
+  --light-tint-on-solid: #ffffff;
+  --dark-tint-on-solid: #ffffff;
+  --light-tint-on-accent: #232529;
+  --dark-tint-on-accent: #232529;
+  --light-tint-primary: #232529;
+  --dark-tint-primary: #232529;
+  --light-tint-action: #00758F;
+  --dark-tint-action: #00758F;
+  --light-tint-on-info: #00758F;
+  --dark-tint-on-info: #00758F;
+  --light-tint-on-danger: #9C3039;
+  --dark-tint-on-danger: #9C3039;
+
+  /* Utility */
+  --light-utility-border-gradient-on-accent: linear-gradient(180deg, #13141614 0%, #1314161a 90%, #13141633 100%);
+  --dark-utility-border-gradient-on-accent: linear-gradient(180deg, #13141614 0%, #1314161a 90%, #13141633 100%);
+  --light-utility-border-outlined-button: linear-gradient(180deg, #13141614 0%, #13141614 15%, #1314161a 90%, #13141633 100%);
+  --dark-utility-border-outlined-button: linear-gradient(180deg, #ffffff33 0%, #ffffff1a 15%, #ffffff14 90%, #ffffff14 100%);
+  --light-utility-state-focus-outline: #008fa866;
+  --dark-utility-state-focus-outline: #65c9d766;
+  --light-utility-state-button-hover: #1314161f;
+  --dark-utility-state-button-hover: #1314161f;
+  --light-utility-state-button-pressed: #13141640;
+  --dark-utility-state-button-pressed: #13141640;
+  --light-utility-state-disabled: #8f919933;
+  --dark-utility-state-disabled: #8f919933;
+}

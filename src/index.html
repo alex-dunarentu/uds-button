@@ -6,13 +6,14 @@
     <script src="webcomponents/webcomponents-loader.js"></script>
     <script src="lit/polyfill-support.js"></script>
     <link rel="stylesheet" href="./assets/styles/normalize.css" />
-    <link rel="stylesheet" href="./assets/styles/theme.css" />
+    <link rel="stylesheet" href="./assets/styles/themeMock.css" />
     <link rel="stylesheet" href="./assets/styles/index.css" />
   </head>
   <body theme="Light">
     <div class="centered">
       <h1>Theme</h1>
     </div>
+
     <div class="centered theme">
       <uds-button theme="Light" variant="Primary" intent="Danger" size="Large">
         <span slot="label">Light</span>
@@ -21,11 +22,6 @@
         <span slot="label">Dark</span>
       </uds-button>
     </div>
-
-    <button class="Button">
-      <div class="Surface Background"></div>
-      <div class="Foreground">Button label</div>
-    </button>
 
     <div class="grid-container">
       <div class="centered heading">
@@ -52,43 +48,22 @@
         <h2>Default</h2>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Primary"
-          intent="Accent"
-          size="Large"
-          type="submit"
-        >
+        <uds-button theme="Light" variant="Primary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Secondary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button theme="Light" variant="Secondary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Secondary-Outlined"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button theme="Light" variant="Secondary-Outlined" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          theme="Light"
-          variant="Tertiary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button theme="Light" variant="Tertiary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
@@ -97,46 +72,22 @@
         <h2>Disabled</h2>
       </div>
       <div class="centered">
-        <uds-button
-          disabled
-          theme="Light"
-          variant="Primary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button disabled theme="Light" variant="Primary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          disabled
-          theme="Light"
-          variant="Secondary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button disabled theme="Light" variant="Secondary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          disabled
-          theme="Light"
-          variant="Secondary-Outlined"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button disabled theme="Light" variant="Secondary-Outlined" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          disabled
-          theme="Light"
-          variant="Tertiary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button disabled theme="Light" variant="Tertiary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
@@ -145,51 +96,26 @@
         <h2>Loading</h2>
       </div>
       <div class="centered">
-        <uds-button
-          loading
-          theme="Light"
-          variant="Primary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button loading theme="Light" variant="Primary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          loading
-          theme="Light"
-          variant="Secondary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button loading theme="Light" variant="Secondary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          loading
-          theme="Light"
-          variant="Secondary-Outlined"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button loading theme="Light" variant="Secondary-Outlined" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
       <div class="centered">
-        <uds-button
-          loading
-          theme="Light"
-          variant="Tertiary"
-          intent="Accent"
-          size="Large"
-        >
+        <uds-button loading theme="Light" variant="Tertiary" intent="Accent" size="Large">
           <span slot="label">Button label</span>
         </uds-button>
       </div>
     </div>
-    <!-- 
     <div class="grid-container">
       <div class="centered heading">
         <h1>Medium Accent</h1>
@@ -512,7 +438,7 @@
         </uds-button>
       </div>
     </div>
- 
+  
     <div class="grid-container">
       <div class="centered heading">
         <h1>Large Info</h1>
@@ -1378,13 +1304,11 @@
         </uds-button>
       </div>
     </div>
-    -->
+
     <script>
       const buttonElements = document.querySelectorAll('uds-button');
 
       function handleTheme(theme) {
-        console.log('Switching theme to ', theme);
-
         document.body.setAttribute('theme', theme);
         buttonElements.forEach((buttonEl) => (buttonEl.theme = theme));
       }

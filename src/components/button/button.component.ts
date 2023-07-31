@@ -3,13 +3,13 @@ import { html as staticHtml, literal } from 'lit/static-html.js';
 import { when } from 'lit/directives/when.js';
 import { customElement, property } from 'lit/decorators.js';
 
-import { styles, normalizeStyles } from './button.styles';
+import { styles } from './button.styles';
 import { ButtonSize, ButtonVariant, ButtonIntent } from './button.types';
 import Loading from '../../assets/images/loading.svg';
 
 @customElement('uds-button')
 export class UDSButton extends LitElement {
-  static override styles = [normalizeStyles, styles];
+  static override styles = styles;
 
   /**
    * Specifies the variant of the button, used for customizing its appearance.
@@ -65,7 +65,6 @@ export class UDSButton extends LitElement {
   @property() type: '' | 'submit' | 'reset' = '';
 
   override render() {
-    // Link buttons may not be disabled
     const isDisabled = (this.disabled || this.loading) && !this.href;
     const isLoading = this.loading ? 'Loading' : '';
     const button = this.href ? literal`a` : literal`button`;
@@ -80,19 +79,22 @@ export class UDSButton extends LitElement {
         target=${this.target || nothing}
         @click="${this.handleClick}"
       >
-      ${when(
-        this.loading,
-        () => html`<img class="LoadingIcon" src=${Loading} alt="Loading" />`,
-        () => html``
-      )}
-        <slot name="leftIcon"></slot>
-        <slot name="label"></slot>
-        <slot name="rightIcon"></slot>
+        ${when(
+          this.loading,
+          () => html`<img class="LoadingIcon" src=${Loading} alt="Loading" />`,
+          () => html``
+        )}
+        <div class="Background"></div>
+        <div class="Foreground">
+          <slot name="leftIcon"></slot>
+          <slot name="label"></slot>
+          <slot name="rightIcon"></slot>
+        </div>
       </${button}>
     `;
   }
 
-  override updated() {
+  override firstUpdated() {
     this.checkSlots();
   }
 
@@ -100,10 +102,10 @@ export class UDSButton extends LitElement {
     const leftIconSlot = this.shadowRoot!.querySelector('slot[name="leftIcon"]') as HTMLSlotElement;
     const rightIconSlot = this.shadowRoot!.querySelector('slot[name="rightIcon"]') as HTMLSlotElement;
 
-    const leftIconCount = leftIconSlot.assignedNodes({ flatten: true }).filter((node) => node.nodeType === Node.ELEMENT_NODE).length;
-    const rightIconCount = rightIconSlot.assignedNodes({ flatten: true }).filter((node) => node.nodeType === Node.ELEMENT_NODE).length;
+    const leftIcon = leftIconSlot.assignedNodes({ flatten: true })[0] as HTMLElement;
+    const rightIcon = rightIconSlot.assignedNodes({ flatten: true })[0] as HTMLElement;
 
-    if (leftIconCount > 0 && rightIconCount > 0) {
+    if (leftIcon && rightIcon) {
       leftIconSlot.style.display = 'none';
       rightIconSlot.style.display = 'none';
       throw new Error('Only one icon can be used in either leftIcon or rightIcon slot of the button');
