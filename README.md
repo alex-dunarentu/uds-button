@@ -4,7 +4,7 @@
 
 This repository contains a customizable and reusable button component built using `Typescript` and `Lit`, compatible with any framework or none at all.
 
-Utilizing ShadowRoot, the button component ensures an encapsulated design system, safeguarding its integrity and enabling a harmonious coexistence with other elements. Additionally, we've incorporated `UDS` theme variables using CSS built-in variables, granting the power to effortlessly control the appearance of the button based on the application's theme preferences.
+Utilizing ShadowRoot, the button component ensures an encapsulated design system, safeguarding its integrity and enabling a harmonious coexistence with other elements. Additionally, `UDS` theme variables are incorporated using CSS built-in variables, granting the power to effortlessly control the appearance of the button based on the application's theme preferences.
 
 For convenience, an index.html page is included within the repository which serves as a comprehensive showcase, providing an extensive array of button appearances directly derived from the Figma design, aiming to facilitate a seamless review of all possible button variations.
 
