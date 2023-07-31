@@ -175,7 +175,7 @@ npm run build
 <script src="app.bundle.js"></script>
 ```
 
-## Optimisations
+## Optimizations
 
 1. The implementation of minification for CSS string template literals from lit CSS in JS can significantly reduce the build output size by approximately 50% in this case.
 2. In order to optimize the overall performance and efficiency, a strategic approach involves tailoring the theme and component properties to align with the preferences of the project and the development team. By carefully considering the team's coding style, design patterns, and architectural preferences, a streamlined development process and enhanced code maintainability can be achieved. Additionally, a judicious selection of component usage, incorporating only the necessary elements and avoiding unnecessary redundancies, can significantly improve the project's load times and overall user experience.
