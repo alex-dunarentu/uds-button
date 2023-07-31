@@ -175,6 +175,8 @@ npm run build
 <script src="app.bundle.js"></script>
 ```
 
+3. Include a `UDS` theme like in [here](https://github.com/alex-dunarentu/uds-button/blob/main/src/assets/styles/themeMock.css).
+
 ## Optimizations
 
 1. The implementation of minification for CSS string template literals from lit CSS in JS can significantly reduce the build output size by approximately 50% in this case.
