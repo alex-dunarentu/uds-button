@@ -43,7 +43,7 @@ export class UDSButton extends LitElement {
   @property() target?: string;
 
   /**
-   * Whether to display the button for 'Light' or 'Dark' theme.
+   * Determines whether the button is styled for 'Light' or 'Dark' theme.
    */
   @property() theme: 'Light' | 'Dark' = 'Light';
 

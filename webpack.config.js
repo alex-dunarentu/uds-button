@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-module.exports = (env, argv) => ({
+module.exports = (env) => ({
   mode: 'development',
   entry: {
     app: './src/index.ts',
@@ -12,7 +13,7 @@ module.exports = (env, argv) => ({
       directory: path.join(__dirname, 'dist'),
     },
   },
-  devtool: argv.mode === 'production' ? 'none' : 'inline-source-map',
+  devtool: env.mode === 'production' ? 'none' : 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -64,6 +65,11 @@ module.exports = (env, argv) => ({
           filename: 'assets/images/[name][ext]',
         },
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
     ],
   },
   resolve: {
